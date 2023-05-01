@@ -8,7 +8,11 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
   }
 
-  body,
+  body {
+    margin: 0;
+    background-color: ${(props) => props.theme.colors.primary}
+  }
+
   h1,
   h2,
   h3,
@@ -17,7 +21,6 @@ const GlobalStyle = createGlobalStyle`
   h6 {
     margin: 0;
     font : inherit;
-    background-color: #433550;
   }
 
   ul {
