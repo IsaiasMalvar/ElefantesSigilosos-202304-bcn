@@ -8,11 +8,6 @@ const GameCardsContextProvider = ({
   const cardStore: GameCardsContextStructure = {
     gameCards: [],
     currentPage: 1,
-    loadCard: () => {},
-    deleteCard: () => {},
-    createCard: () => {},
-    editCard: () => {},
-    filterCards: () => {},
   };
 
   return (
