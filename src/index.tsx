@@ -5,6 +5,8 @@ import { ThemeProvider } from "styled-components";
 import theme from "./styles/theme/theme";
 import { RouterProvider } from "react-router-dom";
 import appRouter from "./routers/appRouter/appRouter";
+import "@fontsource/poppins";
+import "@fontsource/merriweather";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement

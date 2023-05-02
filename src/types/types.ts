@@ -1,4 +1,4 @@
-export interface CardStructure {
+export interface GameCardStructure {
   name: string;
   type: string;
   flavor: string;
