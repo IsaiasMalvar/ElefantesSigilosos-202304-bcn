@@ -4,16 +4,14 @@ import NavbarStyled from "./NavbarStyled";
 const Navbar = (): JSX.Element => {
   return (
     <NavbarStyled>
-      <div className="navbar">
-        <ul className="navbar__links">
-          <li>
-            <NavLink to="/cards">Cards</NavLink>
-          </li>
-          <li>
-            <NavLink to="/create">Create</NavLink>
-          </li>
-        </ul>
-      </div>
+      <ul className="navbar__links">
+        <li>
+          <NavLink to="/cards">Cards</NavLink>
+        </li>
+        <li>
+          <NavLink to="/create">Create</NavLink>
+        </li>
+      </ul>
     </NavbarStyled>
   );
 };
