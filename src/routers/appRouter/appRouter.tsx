@@ -5,12 +5,6 @@ const routes: RouteObject[] = [
   {
     path: "/",
     element: <App />,
-    children: [
-      {
-        path: "cards",
-        element: <p>CARDS PAGE</p>,
-      },
-    ],
   },
 ];
 

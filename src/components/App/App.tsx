@@ -4,7 +4,7 @@ import Layout from "../Layout/Layout";
 const App = (): JSX.Element => {
   return (
     <LayoutStyled>
-      <Layout />;
+      <Layout />
     </LayoutStyled>
   );
 };
