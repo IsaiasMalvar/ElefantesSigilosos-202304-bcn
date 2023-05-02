@@ -1,30 +1,6 @@
-declare module "styled-components" {
-  export interface DefaultTheme {
-    colors: {
-      primary: string;
-      secondary: string;
-      tertiary: string;
-      quaternary: string;
-      light: string;
-      dark: string;
-    };
+import { DefaultTheme } from "styled-components";
 
-    fonts: {
-      primary: string;
-      secondary: string;
-    };
-
-    fontSizes: {
-      medium: string;
-    };
-
-    spacing: {
-      medium: string;
-    };
-  }
-}
-
-const theme = {
+const theme: DefaultTheme = {
   colors: {
     primary: "#433550",
     secondary: "#D35400",
