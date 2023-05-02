@@ -3,11 +3,9 @@ import Layout from "../Layout/Layout";
 
 const App = (): JSX.Element => {
   return (
-    <>
-      <ContainerStyled>
-        <Layout />
-      </ContainerStyled>
-    </>
+    <ContainerStyled>
+      <Layout />
+    </ContainerStyled>
   );
 };
 
