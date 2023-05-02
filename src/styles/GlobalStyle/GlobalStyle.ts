@@ -31,6 +31,10 @@ const GlobalStyle = createGlobalStyle`
     margin-bottom: 0;
   }
 
+  li {
+    list-style: none;
+  }
+
   input {
     font-family: inherit;
     border: none;
