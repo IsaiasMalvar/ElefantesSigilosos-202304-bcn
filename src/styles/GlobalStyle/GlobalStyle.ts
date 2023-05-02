@@ -11,7 +11,8 @@ const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;
     background-color: ${(props) => props.theme.colors.primary};
-    color: ${(props) => props.theme.colors.light}
+    color: ${(props) => props.theme.colors.light};
+    font-family: ${(props) => props.theme.fonts.primary};
   }
 
   h1,

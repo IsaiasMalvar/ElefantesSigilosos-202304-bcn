@@ -1,11 +1,11 @@
-import { CardStructure } from "../../../types/types";
+import { GameCardStructure } from "../../../types/types";
 
 export interface GameCardsContextStructure {
-  gameCards: CardStructure[];
+  gameCards: GameCardStructure[];
   currentPage: number;
-  loadCard: (gameCards: CardStructure[]) => void;
+  loadCard: (gameCards: GameCardStructure[]) => void;
   deleteCard: (id: number) => void;
-  createCard: (newCard: CardStructure) => void;
-  editCard: (id: number, newData: CardStructure) => void;
+  createCard: (newCard: GameCardStructure) => void;
+  editCard: (id: number, newData: GameCardStructure) => void;
   filterCards: (rarity: string) => void;
 }
