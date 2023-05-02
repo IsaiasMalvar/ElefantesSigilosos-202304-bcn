@@ -2,10 +2,9 @@
 
 - gameCards: gameCard[ ] → [ ]
 - UiContext:
-    - isLoading: boolean
-    - isError: boolean
-    - isSuccess: boolean (showFeedback, info por props)
-    
+  - isLoading: boolean
+  - isError: boolean
+  - isSuccess: boolean (showFeedback, info por props)
 
 ## Data modifications
 
@@ -15,34 +14,33 @@ gameCards:
 - modifyCard(cardId): Modify data card by id
 - deleteCard(cardId): Delete a card by id
 
-
 ## Components
-
 
 ### GameCardsContext
 
 - Stores:
-    - gameCards[]
-    - currentPage: number(default to 1)
+  - gameCards[]
+  - currentPage: number(default to 1)
 - Actions:
-    - load-cards
-    - create-card(newCard)
-    - edit-card({id, newData})
-    - delete-card(id)
-    - filter-cards(method: string)
+  - load-cards
+  - create-card(newCard)
+  - edit-card({id, newData})
+  - delete-card(id)
+  - filter-cards(rarity: string)
 
 ### UiContext
 
 - Stores:
-    - isLoading: boolean
-    - isError: boolean
+
+  - isLoading: boolean
+  - isError: boolean
 
 - Actions
-    - set-loading
-    - show-loading
-    - hide-loading
-    - show-error
-    - hide-error
+  - set-loading
+  - show-loading
+  - hide-loading
+  - show-error
+  - hide-error
 
 ### App
 
@@ -80,7 +78,7 @@ gameCards:
 - Shows a button to delete the card
 - Receives card data as prop
 - Receives delete-card dispatch function from the GameCardsContext
-- Calls  delete-card dispatch function with appropriate action and payload (id of the card to delete)
+- Calls delete-card dispatch function with appropriate action and payload (id of the card to delete)
 
 ### CardListComponent
 
