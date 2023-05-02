@@ -4,6 +4,7 @@ import GameCard from "./GameCard";
 import { ThemeProvider } from "styled-components";
 import theme from "../../styles/theme/theme";
 import { BrowserRouter } from "react-router-dom";
+import userEvent from "@testing-library/user-event";
 
 describe("Given a GameCard Component", () => {
   const card: GameCardStructure = {
@@ -88,6 +89,28 @@ describe("Given a GameCard Component", () => {
       const image = screen.getByAltText(altText);
 
       expect(image).toBeInTheDocument();
+    });
+  });
+
+  describe("When it receives a card named 'Starlight Invoker' and the user clicks the delete button", () => {
+    test("Then it should call the received handler", async () => {
+      const buttonName = "Delete card";
+
+      render(
+        <ThemeProvider theme={theme}>
+          <BrowserRouter>
+            <GameCard card={card} handleDeleteClick={handleDeleteClick} />
+          </BrowserRouter>
+        </ThemeProvider>
+      );
+
+      const button = screen.getByRole("button", {
+        name: buttonName,
+      });
+
+      await userEvent.click(button);
+
+      expect(handleDeleteClick).toHaveBeenCalled();
     });
   });
 });

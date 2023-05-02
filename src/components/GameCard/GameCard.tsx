@@ -27,7 +27,7 @@ const GameCard = ({
       <span className="gamecard-type" aria-label="Card type">
         {type}
       </span>
-      <Link to={"/card/" + id}>
+      <Link to={"/card/" + id} aria-label="Card details page">
         <img
           className="gamecard-image"
           src={imageUrl}
