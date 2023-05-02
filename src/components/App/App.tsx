@@ -1,11 +1,11 @@
-import ContainerStyled from "../../styles/ContainerStyled/ContainerStyled";
+import LayoutStyled from "../Layout/LayoutStyled";
 import Layout from "../Layout/Layout";
 
 const App = (): JSX.Element => {
   return (
-    <ContainerStyled>
-      <Layout />
-    </ContainerStyled>
+    <LayoutStyled>
+      <Layout />;
+    </LayoutStyled>
   );
 };
 
