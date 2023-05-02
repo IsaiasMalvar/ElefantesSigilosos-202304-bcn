@@ -5,12 +5,12 @@ const Navbar = (): JSX.Element => {
   return (
     <NavbarStyled>
       <div className="navbar">
-        <ul>
+        <ul className="navbar__links">
           <li>
-            <NavLink to="/create">Create</NavLink>
+            <NavLink to="/cards">Cards</NavLink>
           </li>
           <li>
-            <NavLink to="/edit">Edit</NavLink>
+            <NavLink to="/create">Create</NavLink>
           </li>
         </ul>
       </div>
