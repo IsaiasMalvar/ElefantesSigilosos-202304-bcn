@@ -1,30 +1,17 @@
-import GameCardContext from "./GameCardsContext";
-import { useContext } from "react";
 import GameCardsContextProvider from "./GameCardsContextProvider";
 import { render, screen } from "@testing-library/react";
 
 describe("Given a GameCardsContextProvider", () => {
-  describe("When it's rendered with a ParagraphChildren", () => {
-    test("Then it should contain the ParagraphChildren in the document", () => {
-      const ParagraphChildren = (): JSX.Element => {
-        const { gameCards } = useContext(GameCardContext);
+  describe("When it's rendered with a children", () => {
+    test("Then it should show a heading with 'hola' inside", () => {
+      const text = "Hola";
+      const children = <h1>{text}</h1>;
 
-        return (
-          <p data-testid="card-paragraph">
-            {`There are ${gameCards.length} cards in the context`}
-          </p>
-        );
-      };
+      render(<GameCardsContextProvider>{children}</GameCardsContextProvider>);
 
-      render(
-        <GameCardsContextProvider>
-          <ParagraphChildren />
-        </GameCardsContextProvider>
-      );
+      const heading = screen.getByRole("heading", { name: text });
 
-      const cardParagraph = screen.getByTestId("card-paragraph");
-
-      expect(cardParagraph).toBeInTheDocument();
+      expect(heading).toBeInTheDocument();
     });
   });
 });

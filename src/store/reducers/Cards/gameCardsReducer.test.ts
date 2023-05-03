@@ -1,5 +1,5 @@
 import { loadGameCardsActionCreator } from "../../actions/gameCards/gameCardsActionCreators";
-import { GameCardsContextStructure } from "../../contexts/GameCardsContext/types";
+import { GameCardsState } from "../../contexts/GameCardsContext/types";
 import gameCardsReducer from "./gameCardsReducer";
 import { GameCardsActionsType } from "../../actions/gameCards/types";
 
@@ -32,11 +32,11 @@ const cards = [
 describe("Given a gameCardsReducer reducer", () => {
   describe("When it receives an empty list of cards and two cards", () => {
     test("Then it should return the received two cards", () => {
-      const currentCardStore: GameCardsContextStructure = {
+      const currentCardStore: GameCardsState = {
         gameCards: [],
         currentPage: 1,
       };
-      const expectedCardsStore: GameCardsContextStructure = {
+      const expectedCardsStore: GameCardsState = {
         gameCards: cards,
         currentPage: 1,
       };
@@ -52,7 +52,7 @@ describe("Given a gameCardsReducer reducer", () => {
 
   describe("When it receives two cards and an unknown action", () => {
     test("Then it shoul return the same cards received", () => {
-      const currentCardStore: GameCardsContextStructure = {
+      const currentCardStore: GameCardsState = {
         gameCards: [],
         currentPage: 1,
       };

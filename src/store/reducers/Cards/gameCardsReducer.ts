@@ -4,13 +4,13 @@ import {
   LoadGameCardsAction,
 } from "../../actions/gameCards/types";
 import { GameCardsAction } from "../../actions/gameCards/types";
-import { GameCardsContextStructure } from "../../contexts/GameCardsContext/types";
+import { GameCardsState } from "../../contexts/GameCardsContext/types";
 
-const gameCardsReducer: Reducer<GameCardsContextStructure, GameCardsAction> = (
+const gameCardsReducer: Reducer<GameCardsState, GameCardsAction> = (
   currentCardStore,
   action
-) => {
-  let newCardStore: GameCardsContextStructure = {
+): GameCardsState => {
+  let newCardStore: GameCardsState = {
     gameCards: [],
     currentPage: 1,
   };
