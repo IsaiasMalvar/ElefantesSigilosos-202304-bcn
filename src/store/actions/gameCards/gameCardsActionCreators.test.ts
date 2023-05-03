@@ -35,7 +35,7 @@ describe("Given a function loadGameCardsActionCreator", () => {
       expect(loadGameCardsAction).toHaveProperty("payload", gameCards);
       expect(loadGameCardsAction).toHaveProperty(
         "type",
-        GameCardsActionsType.loadCharacters
+        GameCardsActionsType.loadGameCards
       );
     });
   });

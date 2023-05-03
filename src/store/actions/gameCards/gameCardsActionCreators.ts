@@ -4,6 +4,6 @@ import { LoadGameCardsAction, GameCardsActionsType } from "./types";
 export const loadGameCardsActionCreator = (
   cards: GameCardStructure[]
 ): LoadGameCardsAction => ({
-  type: GameCardsActionsType.loadCharacters,
+  type: GameCardsActionsType.loadGameCards,
   payload: cards,
 });
