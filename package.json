@@ -67,7 +67,9 @@
       "src/**/*.tsx",
       "src/**/*.ts",
       "!src/index.tsx",
-      "!src/styles/GlobalStyle/GlobalStyle.ts"
+      "!src/styles/GlobalStyle/GlobalStyle.ts",
+      "!src/routers/appRouter/appRouter.tsx",
+      "!src/components/App/App.tsx"
     ]
   }
 }
