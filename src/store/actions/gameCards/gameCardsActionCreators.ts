@@ -3,9 +3,7 @@ import { LoadGameCardsAction, GameCardsActionsType } from "./types";
 
 export const loadGameCardsActionCreator = (
   cards: GameCardStructure[]
-): LoadGameCardsAction => {
-  return {
-    type: GameCardsActionsType.loadCharacters,
-    payload: cards,
-  };
-};
+): LoadGameCardsAction => ({
+  type: GameCardsActionsType.loadCharacters,
+  payload: cards,
+});

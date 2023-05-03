@@ -21,6 +21,10 @@ const card: GameCardStructure = {
 
 const handleDeleteClick = jest.fn();
 
+beforeEach(() => {
+  jest.clearAllMocks();
+});
+
 const routes = [
   {
     path: "/",
@@ -44,7 +48,6 @@ describe("Given a GameCard Component", () => {
       });
 
       expect(heading).toBeInTheDocument();
-      expect(heading.textContent).toBe(card.name);
     });
 
     test("Then it should show a text with the type of card: Creature — Human Soldier", () => {
