@@ -4,7 +4,6 @@ const NavbarStyled = styled.nav`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 10px;
 
   .navbar__links {
     font-family: Poppins;
