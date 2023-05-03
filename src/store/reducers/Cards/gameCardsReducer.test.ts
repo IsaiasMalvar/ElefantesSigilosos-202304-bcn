@@ -1,6 +1,7 @@
 import { loadGameCardsActionCreator } from "../../actions/gameCards/gameCardsActionCreators";
 import { GameCardsContextStructure } from "../../contexts/GameCardsContext/types";
 import gameCardsReducer from "./gameCardsReducer";
+import { GameCardsActionsType } from "../../actions/gameCards/types";
 
 const cards = [
   {
@@ -46,6 +47,21 @@ describe("Given a gameCardsReducer reducer", () => {
       );
 
       expect(updatedCardStore).toEqual(expectedCardsStore);
+    });
+  });
+
+  describe("When it receives two cards and an unknown action", () => {
+    test("Then it shoul return the same cards received", () => {
+      const currentCardStore: GameCardsContextStructure = {
+        gameCards: [],
+        currentPage: 1,
+      };
+
+      const action = { type: GameCardsActionsType.test };
+
+      const updatedCardStore = gameCardsReducer(currentCardStore, action);
+
+      expect(updatedCardStore).toEqual(currentCardStore);
     });
   });
 });

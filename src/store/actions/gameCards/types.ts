@@ -2,6 +2,7 @@ import { GameCardStructure } from "../../../types/types";
 
 export enum GameCardsActionsType {
   loadGameCards,
+  test,
 }
 
 export interface GameCardsAction {
