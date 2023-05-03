@@ -1,7 +1,7 @@
 import { GameCardStructure } from "../../../types/types";
 
 export enum GameCardsActionsType {
-  loadCharacters,
+  loadGameCards,
 }
 
 export interface GameCardsAction {
@@ -10,6 +10,6 @@ export interface GameCardsAction {
 }
 
 export interface LoadGameCardsAction extends GameCardsAction {
-  type: GameCardsActionsType.loadCharacters;
+  type: GameCardsActionsType.loadGameCards;
   payload: GameCardStructure[];
 }
