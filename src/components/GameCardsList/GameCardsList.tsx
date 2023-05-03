@@ -4,13 +4,15 @@ import GameCardsListStyled from "./GameCardsListStyled";
 
 interface GameCardsListProps {
   cards: GameCardStructure[];
+  handleDeleteClick: () => void;
 }
-const GameCardsList = ({ cards }: GameCardsListProps) => {
+
+const GameCardsList = ({ cards, handleDeleteClick }: GameCardsListProps) => {
   return (
     <GameCardsListStyled>
       {cards.map((card) => (
-        <li>
-          <GameCard card={card} key={card.id} handleDeleteClick={() => ({})} />
+        <li key={card.id}>
+          <GameCard card={card} handleDeleteClick={handleDeleteClick} />
         </li>
       ))}
     </GameCardsListStyled>
