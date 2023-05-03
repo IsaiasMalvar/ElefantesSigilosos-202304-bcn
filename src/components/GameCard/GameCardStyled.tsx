@@ -5,15 +5,13 @@ const GameCardStyled = styled.article`
   color: ${(props) => props.theme.colors.dark};
   padding: ${(props) => props.theme.spacing.medium};
   border-radius: 5px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   gap: 10px;
 
   .gamecard-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding-bottom: 10px;
 
     &__title {
       font-family: ${(props) => props.theme.fonts.secondary};
@@ -23,11 +21,18 @@ const GameCardStyled = styled.article`
   }
 
   .gamecard-type {
-    margin-bottom: 10px;
+    display: block;
+    padding-bottom: 20px;
   }
 
   .gamecard-image {
     align-self: center;
+    height: auto;
+  }
+
+  .gamecard-link {
+    display: block;
+    text-align: center;
   }
 `;
 

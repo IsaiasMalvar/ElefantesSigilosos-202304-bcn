@@ -7,6 +7,7 @@ const HeaderStyled = styled.header`
   font-family: merriweather;
   font-weight: bold;
   font-size: 20px;
+  margin-top: 20px;
 
   .logo {
     display: flex;
