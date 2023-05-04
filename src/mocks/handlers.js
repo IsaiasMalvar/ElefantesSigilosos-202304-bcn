@@ -1,7 +1,7 @@
 import { rest } from "msw";
 
 export const handlers = [
-  rest.get("http://localhost:4000/cards", (req, res, ctx) => {
+  rest.get("https://localhost:4000/cards", (req, res, ctx) => {
     return res(
       ctx.status(200),
       ctx.json([
@@ -14,7 +14,7 @@ export const handlers = [
           rarity: "Rare",
           artist: "Izzy",
           imageUrl:
-            "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=489687&type=card",
+            "https://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=489687&type=card",
           number: 1,
         },
         {
@@ -26,7 +26,7 @@ export const handlers = [
           rarity: "Uncommon",
           artist: "David Rapoza",
           imageUrl:
-            "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=489688&type=card",
+            "https://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=489688&type=card",
           number: 2,
         },
       ])
