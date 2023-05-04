@@ -1,23 +1,15 @@
 import axios from "axios";
-import { useCallback, useContext } from "react";
-import GameCardContext from "../store/contexts/GameCardsContext/GameCardsContext";
-import { loadGameCardsActionCreator } from "../store/actions/gameCards/gameCardsActionCreators";
+import { useCallback } from "react";
 
-const url = axios.create({
-  baseURL: "http://localhost:4000/",
-});
+const apiUrl = process.env.REACT_APP_API_URL;
 
 const useAxios = () => {
-  const { dispatch } = useContext(GameCardContext);
+  const getCards = useCallback(async () => {
+    const { data: cards } = await axios.get(`${apiUrl}/cards/?_page=1`);
+    return cards;
+  }, []);
 
-  const loadCards = useCallback(async () => {
-    const response = await url.get("cards");
-    dispatch(loadGameCardsActionCreator(response.data));
-  }, [dispatch]);
-
-  return {
-    loadCards,
-  };
+  return { getCards };
 };
 
 export default useAxios;

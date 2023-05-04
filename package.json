@@ -2,6 +2,7 @@
   "name": "spellify",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "dependencies": {
     "@commitlint/cli": "^17.6.1",
     "@commitlint/config-conventional": "^17.6.1",
@@ -71,6 +72,9 @@
       "!src/styles/GlobalStyle/GlobalStyle.ts",
       "!src/routers/appRouter/appRouter.tsx",
       "!src/components/App/App.tsx"
-    ]
+    ],
+    "moduleNameMapper": {
+      "axios": "axios/dist/node/axios.cjs"
+    }
   }
 }
