@@ -7,15 +7,18 @@ import { RouterProvider } from "react-router-dom";
 import appRouter from "./routers/appRouter/appRouter";
 import "@fontsource/poppins";
 import "@fontsource/merriweather";
+import GameCardsContextProvider from "./store/contexts/GameCardsContext/GameCardsContextProvider";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <ThemeProvider theme={theme}>
-      <RouterProvider router={appRouter} />
-      <GlobalStyle />
-    </ThemeProvider>
+    <GameCardsContextProvider>
+      <ThemeProvider theme={theme}>
+        <RouterProvider router={appRouter} />
+        <GlobalStyle />
+      </ThemeProvider>
+    </GameCardsContextProvider>
   </React.StrictMode>
 );
