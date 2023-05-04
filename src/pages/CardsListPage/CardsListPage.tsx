@@ -18,7 +18,7 @@ const CardsPage = (): JSX.Element => {
         rarity: "Uncommon",
         artist: "David Rapoza",
         imageUrl:
-          "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=489688&type=card",
+          "https://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=489688&type=card",
         number: 2,
       },
       {
@@ -29,7 +29,7 @@ const CardsPage = (): JSX.Element => {
         rarity: "Uncommon",
         artist: "Jeremy Enecio",
         imageUrl:
-          "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=489689&type=card",
+          "https://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=489689&type=card",
         number: 3,
       },
     ];
