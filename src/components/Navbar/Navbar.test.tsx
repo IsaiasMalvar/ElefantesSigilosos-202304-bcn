@@ -1,6 +1,8 @@
 import { render, screen } from "@testing-library/react";
 import { RouterProvider, createMemoryRouter } from "react-router-dom";
 import Navbar from "./Navbar";
+import { ThemeProvider } from "styled-components";
+import theme from "../../styles/theme/theme";
 
 describe("Given a Navbar component", () => {
   describe("When it is rendered", () => {
@@ -8,7 +10,11 @@ describe("Given a Navbar component", () => {
       const routes = [
         {
           path: "/",
-          element: <Navbar />,
+          element: (
+            <ThemeProvider theme={theme}>
+              <Navbar />
+            </ThemeProvider>
+          ),
         },
       ];
 
