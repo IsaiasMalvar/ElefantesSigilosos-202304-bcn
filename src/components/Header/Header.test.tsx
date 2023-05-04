@@ -1,6 +1,8 @@
 import { screen, render } from "@testing-library/react";
 import { RouterProvider, createMemoryRouter } from "react-router-dom";
 import Header from "./Header";
+import { ThemeProvider } from "styled-components";
+import theme from "../../styles/theme/theme";
 
 describe("Given a HeaderComponent", () => {
   describe("When it receives a logo text `Spellify`'", () => {
@@ -8,7 +10,11 @@ describe("Given a HeaderComponent", () => {
       const routes = [
         {
           path: "/",
-          element: <Header />,
+          element: (
+            <ThemeProvider theme={theme}>
+              <Header />
+            </ThemeProvider>
+          ),
         },
       ];
 

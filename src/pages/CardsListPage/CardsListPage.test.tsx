@@ -18,7 +18,6 @@ describe("Given a CardsListPage component", () => {
       );
 
       const heading = screen.getByRole("heading", {
-        level: 1,
         name: expectedText,
       });
 
