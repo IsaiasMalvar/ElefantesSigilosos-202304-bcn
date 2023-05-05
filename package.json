@@ -15,6 +15,7 @@
     "@types/node": "^16.18.25",
     "@types/react": "^18.2.0",
     "@types/react-dom": "^18.2.1",
+    "axios": "^1.4.0",
     "eslint-plugin-jsx-a11y": "^6.7.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -73,6 +74,9 @@
       "!src/routers/appRouter/appRouter.tsx",
       "!src/components/App/App.tsx",
       "!src/mocks"
-    ]
+    ],
+    "moduleNameMapper": {
+      "axios": "axios/dist/node/axios.cjs"
+    }
   }
 }

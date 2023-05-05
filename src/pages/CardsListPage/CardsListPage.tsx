@@ -1,44 +1,30 @@
-import { useContext, useEffect } from "react";
+import { useEffect } from "react";
+import useAxios from "../../hooks/useAxios";
 import CardsListPageStyled from "./CardsListPageStyled";
+import { useContext } from "react";
 import GameCardContext from "../../store/contexts/GameCardsContext/GameCardsContext";
 import { loadGameCardsActionCreator } from "../../store/actions/gameCards/gameCardsActionCreators";
-import { GameCardStructure } from "../../types/types";
+import GameCardsList from "../../components/GameCardsList/GameCardsList";
 
-const CardsPage = (): JSX.Element => {
-  const { dispatch } = useContext(GameCardContext);
+const CardsPage = () => {
+  const { gameCardsState, dispatch } = useContext(GameCardContext);
+
+  const { getCards } = useAxios();
 
   useEffect(() => {
-    const cardsSample: GameCardStructure[] = [
-      {
-        id: 2,
-        name: "Fencing Ace",
-        type: "Creature — Human Soldier",
-        flavor:
-          "His prowess gives the guildless hope that they can hold out against tyranny.",
-        rarity: "Uncommon",
-        artist: "David Rapoza",
-        imageUrl:
-          "https://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=489688&type=card",
-        number: 2,
-      },
-      {
-        id: 3,
-        name: "Flickerwisp",
-        type: "Creature — Elemental",
-        flavor: "Its wings disturb more than air.",
-        rarity: "Uncommon",
-        artist: "Jeremy Enecio",
-        imageUrl:
-          "https://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=489689&type=card",
-        number: 3,
-      },
-    ];
-    dispatch(loadGameCardsActionCreator(cardsSample));
-  }, [dispatch]);
+    (async () => {
+      const cards = await getCards();
+      dispatch(loadGameCardsActionCreator(cards));
+    })();
+  }, [dispatch, getCards]);
 
   return (
     <CardsListPageStyled>
       <h1 className="cards-intro">Explore our cards</h1>
+      <GameCardsList
+        cards={gameCardsState.gameCards}
+        handleDeleteClick={() => ({})}
+      />
     </CardsListPageStyled>
   );
 };
