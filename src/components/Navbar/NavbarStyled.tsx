@@ -6,7 +6,7 @@ const NavbarStyled = styled.nav`
   align-items: center;
 
   .navbar__links {
-    font-family: Poppins;
+    font-family: ${(props) => props.theme.fonts.primary};
     font-size: 16px;
     display: flex;
     justify-content: center;
@@ -16,10 +16,7 @@ const NavbarStyled = styled.nav`
   }
 
   .active {
-    border-bottom: 4px solid #ffa500;
-  }
-
-  @media (min-width: 1024px) {
+    border-bottom: 4px solid ${(props) => props.theme.colors.secondary};
   }
 `;
 export default NavbarStyled;
