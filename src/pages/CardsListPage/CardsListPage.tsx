@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import useAxios from "../../hooks/useAxios";
+import useApi from "../../hooks/useApi";
 import CardsListPageStyled from "./CardsListPageStyled";
 import { useContext } from "react";
 import GameCardContext from "../../store/contexts/GameCardsContext/GameCardsContext";
@@ -9,7 +9,7 @@ import GameCardsList from "../../components/GameCardsList/GameCardsList";
 const CardsPage = () => {
   const { gameCardsState, dispatch } = useContext(GameCardContext);
 
-  const { getCards } = useAxios();
+  const { getCards } = useApi();
 
   useEffect(() => {
     (async () => {

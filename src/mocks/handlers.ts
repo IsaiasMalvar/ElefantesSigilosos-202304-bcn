@@ -1,10 +1,10 @@
-import { renderHook } from "@testing-library/react";
-import useAxios from "./useAxios";
+import { rest } from "msw";
 
-describe("Given a getCards function", () => {
-  describe("When called", () => {
-    test("Then it should return 10 cards", async () => {
-      const expectedCards = [
+export const handlers = [
+  rest.get("https://localhost:4000/cards/", (_req, res, ctx) => {
+    return res(
+      ctx.status(200),
+      ctx.json([
         {
           id: 1,
           name: "Ethersworn Canonist",
@@ -123,13 +123,7 @@ describe("Given a getCards function", () => {
             "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=489696&type=card",
           number: 10,
         },
-      ];
-
-      const { result } = renderHook(() => useAxios());
-      const { getCards } = await result.current;
-      const cards = await getCards();
-
-      expect(cards).toStrictEqual(expectedCards);
-    });
-  });
-});
+      ])
+    );
+  }),
+];
